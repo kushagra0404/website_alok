@@ -1,9 +1,12 @@
 const siteContent = {
-  name: "Alok Rai",
-  role: "",
-  photo: "photo.png",
-  photoAlt: "Portrait of Alok",
-  description: [
-    "Welcome to my personal website."
+  name: "ALOK KUMAR RAI",
+  role: "Political Affairs | Digital Media | Parliamentary Affairs | Government Coordination",
+  photo: "photos/profile.jpeg",
+  photoAlt: "",
+
+  galleryTitle: "Gallery",
+  gallery: [
+    { src: "photos/first.jpeg", alt: "", caption: "" },
+    { src: "photos/second.jpeg", alt: "", caption: "" }
   ]
 };
