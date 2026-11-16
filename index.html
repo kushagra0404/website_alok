@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alok — Software Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Hello, I'm Alok</h1>
-    <p>Software developer | Problem solver</p>
+  <main>
+    <div class="inner">
+      <div class="avatar">
+        <img id="avatar" alt="" />
+      </div>
 
-    <h2>About Me</h2>
-    <p>Welcome to my personal website.</p>
+      <h1 id="name"></h1>
+      <p class="role" id="role"></p>
+
+      <div class="rule" aria-hidden="true"></div>
+
+      <div id="description"></div>
+
+      <footer class="footer">
+        <span id="copyright"></span>
+      </footer>
+    </div>
+  </main>
+
+  <template id="description-template">
+    <p class="lede"></p>
+  </template>
 </body>
 </html>
