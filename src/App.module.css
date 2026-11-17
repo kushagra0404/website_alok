@@ -1,0 +1,11 @@
+.shell {
+  width: min(100% - 2.5rem, 1000px);
+  margin-inline: auto;
+  padding-block: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+@media (max-width: 560px) {
+  .shell {
+    width: min(100% - 1.5rem, 1000px);
+  }
+}

@@ -1,0 +1,113 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 26px;
+  background: linear-gradient(135deg, #12263f 0%, #0d1c31 70%);
+  color: #eef3f9;
+  box-shadow: 0 32px 70px -40px rgba(13, 28, 49, 0.75);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -45%;
+  right: -10%;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 138, 62, 0.28), transparent 62%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -6rem;
+  bottom: -9rem;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgba(238, 243, 249, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3.5rem rgba(238, 243, 249, 0.04);
+  pointer-events: none;
+}
+
+.avatar {
+  position: relative;
+  width: clamp(110px, 17vw, 168px);
+  aspect-ratio: 1;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--accent), rgba(238, 243, 249, 0.35));
+}
+
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #0d1c31;
+  border-radius: 50%;
+}
+
+.copy {
+  position: relative;
+  min-width: 0;
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: #f7fafd;
+}
+
+.role {
+  margin: 0.9rem 0 0;
+  max-width: 52ch;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1.8;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #a7b7cb;
+}
+
+.tagline {
+  margin: 1.25rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(238, 243, 249, 0.16);
+  max-width: 42ch;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  line-height: 1.5;
+  color: #eadcc2;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .avatar {
+    width: 104px;
+  }
+}
