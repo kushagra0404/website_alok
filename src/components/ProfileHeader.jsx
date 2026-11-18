@@ -8,7 +8,6 @@ export default function ProfileHeader({ profile }) {
       </div>
 
       <div className={styles.copy}>
-        <p className={styles.kicker}>{profile.eyebrow}</p>
         <h1 className={styles.name}>{profile.name}</h1>
         <p className={styles.role}>{profile.role}</p>
         <p className={styles.tagline}>{profile.tagline}</p>

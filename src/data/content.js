@@ -1,11 +1,29 @@
 import profilePhoto from "../../photos/profile.jpeg";
-import firstPhoto from "../../photos/first.jpeg";
-import secondPhoto from "../../photos/second.jpeg";
+
+const photoModules = import.meta.glob(
+  "../../photos/*.{jpeg,jpg,png,webp,JPEG,JPG,PNG,WEBP}",
+  { eager: true, import: "default" }
+);
+
+const galleryImages = Object.entries(photoModules)
+  .filter(([path]) => !path.endsWith("/profile.jpeg"))
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, src]) => {
+    const label = path
+      .split("/")
+      .pop()
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]+/g, " ");
+
+    return {
+      src,
+      alt: `Alok Kumar Rai — ${label}`
+    };
+  });
 
 export const siteContent = {
   profile: {
     name: "Alok Kumar Rai",
-    eyebrow: "Political & Parliamentary Affairs",
     role: "Political Affairs | Digital Media | Parliamentary Affairs | Government Coordination",
     tagline:
       "Roots in Agriculture. Experience in Organisation. Understanding of Governance. Commitment to Nation.",
@@ -13,8 +31,6 @@ export const siteContent = {
     photoAlt: "Alok Kumar Rai"
   },
 
-  quote:
-    "My roots are in the soil, my journey is through public service, and my vision is connected with the nation.",
   closing: "From the Roots of Rural India to the Institutions of National Governance.",
 
   sections: [
@@ -28,7 +44,7 @@ export const siteContent = {
           items: [
             "Alok Kumar Rai is a political, organisational and parliamentary affairs professional with experience across political institutions, digital media, election management, parliamentary processes and government administration.",
             "His professional journey reflects a diverse understanding of grassroots India, political organisations, digital communication, electoral processes and the functioning of government institutions.",
-            "Coming from a farming family with ancestral roots in Tutuvari village, Ballia district, Uttar Pradesh, he takes pride in his agricultural heritage and the values of hard work, simplicity, discipline and dedication that it represents.",
+            "Coming from a farming family with ancestral roots in Tutuwari village, Ballia district, Uttar Pradesh, he takes pride in his agricultural heritage and the values of hard work, simplicity, discipline and dedication that it represents.",
             "Over the years, he has been associated with institutional development, social media initiatives, political organisation, election campaign management, parliamentary affairs and ministerial coordination."
           ]
         }
@@ -42,7 +58,7 @@ export const siteContent = {
         {
           type: "paragraphs",
           items: [
-            "My roots belong to Tutuvari village in Ballia district, Uttar Pradesh, where generations of my family have been connected with agriculture.",
+            "My roots belong to Tutuwari village in Ballia district, Uttar Pradesh, where generations of my family have been connected with agriculture.",
             "I take immense pride in belonging to a farming family. Agriculture is not merely a part of my family's history; it is our heritage, identity and connection with the land.",
             "The values of hard work, patience, simplicity, resilience and commitment have shaped my outlook towards life and public service.",
             "Although my professional journey has taken me through political organisations, digital platforms, Parliament and the Government of India, my connection with my village and agricultural roots remains an integral part of my identity."
@@ -183,7 +199,7 @@ export const siteContent = {
         {
           type: "identity",
           items: [
-            "A proud member of a farming family from Tutuvari, Ballia, Uttar Pradesh.",
+            "A proud member of a farming family from Tutuwari, Ballia, Uttar Pradesh.",
             "A professional with experience in institutional and political organisation.",
             "An individual associated with social media development and digital organisational activities.",
             "A professional with exposure to election management and parliamentary affairs.",
@@ -199,16 +215,7 @@ export const siteContent = {
       blocks: [
         {
           type: "gallery",
-          images: [
-            {
-              src: firstPhoto,
-              alt: "Alok Kumar Rai at a public engagement"
-            },
-            {
-              src: secondPhoto,
-              alt: "Alok Kumar Rai with colleagues"
-            }
-          ]
+          images: galleryImages
         }
       ]
     }

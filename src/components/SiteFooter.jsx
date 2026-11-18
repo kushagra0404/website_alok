@@ -1,18 +1,15 @@
 import styles from "./SiteFooter.module.css";
 
-export default function SiteFooter({ profile, quote, closing }) {
+export default function SiteFooter({ profile, closing }) {
   const year = new Date().getFullYear();
 
   return (
     <footer className={styles.footer}>
-      <p className={styles.quote}>“{quote}”</p>
+      <p className={styles.closing}>{closing}</p>
 
       <div className={styles.row}>
-        <span>{profile.name}</span>
-        <span className={styles.closing}>{closing}</span>
-        <span>
-          © {year} {profile.name}
-        </span>
+        <span className={styles.name}>{profile.name}</span>
+        <span>© {year}</span>
       </div>
     </footer>
   );

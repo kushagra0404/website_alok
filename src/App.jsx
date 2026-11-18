@@ -7,7 +7,7 @@ import SiteFooter from "./components/SiteFooter.jsx";
 import styles from "./App.module.css";
 
 export default function App() {
-  const { profile, quote, closing, sections } = siteContent;
+  const { profile, closing, sections } = siteContent;
   const { activeSection, setActiveId } = useActiveSection(sections);
 
   if (!activeSection) return null;
@@ -24,7 +24,7 @@ export default function App() {
 
       <SectionPanel key={activeSection.id} section={activeSection} />
 
-      <SiteFooter profile={profile} quote={quote} closing={closing} />
+      <SiteFooter profile={profile} closing={closing} />
     </div>
   );
 }

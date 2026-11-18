@@ -3,11 +3,8 @@ import styles from "./JobList.module.css";
 export default function JobList({ items }) {
   return (
     <>
-      {items.map((job, index) => (
+      {items.map((job) => (
         <article className={styles.entry} key={job.title}>
-          <span className={styles.index}>
-            {String(index + 1).padStart(2, "0")}
-          </span>
           <h3 className={styles.title}>{job.title}</h3>
           <p className={styles.role}>{job.role}</p>
           <p className={styles.description}>{job.description}</p>
