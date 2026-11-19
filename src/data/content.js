@@ -218,6 +218,18 @@ export const siteContent = {
           images: galleryImages
         }
       ]
+    },
+    {
+      id: "contact",
+      label: "Contact Us",
+      heading: "Contact Us",
+      blocks: [
+        {
+          type: "contact",
+          mobile: "+91 8826768177",
+          email: "raialok@outlook.com"
+        }
+      ]
     }
   ]
 };

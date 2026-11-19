@@ -37,6 +37,21 @@ function Identity({ items }) {
   );
 }
 
+function Contact({ mobile, email }) {
+  return (
+    <div className={styles.contact}>
+      <a className={styles.contactItem} href={`tel:${mobile.replace(/\s+/g, "")}`}>
+        <span className={styles.contactLabel}>Mobile</span>
+        <span className={styles.contactValue}>{mobile}</span>
+      </a>
+      <a className={styles.contactItem} href={`mailto:${email}`}>
+        <span className={styles.contactLabel}>Email</span>
+        <span className={styles.contactValue}>{email}</span>
+      </a>
+    </div>
+  );
+}
+
 function Blocks({ blocks }) {
   return blocks.map((block, index) => {
     switch (block.type) {
@@ -52,6 +67,14 @@ function Blocks({ blocks }) {
         return <Identity items={block.items} key={index} />;
       case "gallery":
         return <Gallery images={block.images} key={index} />;
+      case "contact":
+        return (
+          <Contact
+            mobile={block.mobile}
+            email={block.email}
+            key={index}
+          />
+        );
       default:
         return null;
     }
