@@ -85,10 +85,11 @@
   margin: 1.25rem 0 0;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(244, 247, 251, 0.16);
-  font-family: var(--font-primary);
-  font-style: italic;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-family: var(--font-secondary);
+  font-style: normal;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.7;
   letter-spacing: 0.005em;
   color: var(--on-dark-muted);
 }

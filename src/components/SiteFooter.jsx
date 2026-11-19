@@ -9,7 +9,7 @@ export default function SiteFooter({ profile, closing }) {
 
       <div className={styles.row}>
         <span className={styles.name}>{profile.name}</span>
-        <span>© {year}</span>
+        <span className={styles.copyright}>© {year}</span>
       </div>
     </footer>
   );

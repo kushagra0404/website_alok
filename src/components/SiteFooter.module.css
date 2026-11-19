@@ -23,9 +23,11 @@
 .closing {
   position: relative;
   margin: 0;
+  font-family: var(--font-primary);
   font-size: var(--text-sm);
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--accent);
 }
 
@@ -46,15 +48,17 @@
   color: var(--on-dark-muted);
 }
 
-.name {
+.name,
+.copyright {
   font-family: var(--font-primary);
+  font-size: var(--text-sm);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--on-dark-muted);
 }
 
-@media (min-width: 720px) {
+@media (min-width: 820px) {
   .closing {
     white-space: nowrap;
   }
